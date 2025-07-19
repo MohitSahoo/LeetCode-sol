@@ -8,7 +8,7 @@
 
 ---
 
-### 🧒 Problem Description:
+### Problem Description:
 
 Assume you are an awesome parent and want to give your children some cookies.  
 Each child `i` has a greed factor `g[i]`, which is the minimum size of a cookie that will make them content.  
