@@ -17,7 +17,8 @@ Collect three $5 bills.
 Use one $5 to give change for a $10.
 
 Use one $10 and one $5 to give change for a $20.
-
+```
+```
  Example 2:
 
 Input:  bills = [5, 5, 10, 10, 20]  
