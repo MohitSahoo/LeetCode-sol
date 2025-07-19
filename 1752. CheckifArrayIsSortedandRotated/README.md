@@ -32,4 +32,5 @@ You can rotate the array by x = 0 positions (i.e. no rotation) to make nums.
 Constraints:
 
 1 <= nums.length <= 100
+
 1 <= nums[i] <= 100
