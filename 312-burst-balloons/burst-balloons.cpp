@@ -6,9 +6,7 @@ public:
 
         int ans = INT_MIN;
         for (int k = i; k <= j; k++) {
-            int cost = solve(nums, i, k-1, dp) 
-                     + solve(nums, k+1, j, dp) 
-                     + nums[i-1] * nums[k] * nums[j+1];
+            int cost = solve(nums, i, k-1, dp) + solve(nums, k+1, j, dp) + nums[i-1] * nums[k] * nums[j+1];
             ans = max(ans, cost);
         }
 
