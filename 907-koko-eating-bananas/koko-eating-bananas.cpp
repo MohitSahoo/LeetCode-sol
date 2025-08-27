@@ -11,8 +11,7 @@ public:
     int minEatingSpeed(vector<int>& piles, int h) {
         int low = 1;
         int high = *std::max_element(piles.begin(), piles.end());
-        int ans = high;  // better initialization
-
+        int ans =1; 
         while (low <= high) {
             int mid = low + (high - low) / 2;
             long long totalhrs = func(piles, mid);
