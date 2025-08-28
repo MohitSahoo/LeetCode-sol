@@ -5,9 +5,8 @@ public:
             return 0;
         }
         set<int> s1;
-        for(int i =0;i<nums.size();i++){
-            s1.insert(nums[i]);
-        }
+        
+        s1.insert(nums.begin(),nums.end());
         int maxcount =1;
         
         for(auto it:s1 ){
