@@ -2,7 +2,7 @@ class Solution {
 public:
     
     int fib(int n) {
-        int dp[32];
+        int dp[31];
         memset(dp,0,sizeof(dp));
         dp[0]=0;
         dp[1]=1;
