@@ -1,18 +1,23 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        std::string y = std::to_string(x);
-        int n = y.size();
-        int i = 0;
-        int j = n-1;
-        while(i<=j){
-            if(y[i]!=y[j]){
-                return false;
-            }
-            i++;
-            j--;
+        if(x<0){
+            return false;
         }
-        return true;
+        int orig=x;
+        long long y =0;
+        
+        while(x!=0){
+            int z = x% 10;
+            x=x/10;
+            y = y*10 +z;
+            if(y > INT_MAX || y < INT_MIN) return 0;
+        }
+        if(orig == (int)y){
+            return true;
+        }else{
+            return false;
+        }
 
         
     }
