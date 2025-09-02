@@ -4,7 +4,7 @@ public:
         if(s.size() !=goal.size()){
             return false;
         }
-        return (s+s).find(goal)!=std::string::npos;
+        return (s+s).find(goal)!=string::npos;
         
     }
 };
