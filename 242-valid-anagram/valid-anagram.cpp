@@ -4,7 +4,7 @@ public:
         if(s.size() != t.size()){
             return false;
         }
-        map<char,int>mpp;
+        map<int,int>mpp;
         for(int i =0;i<s.size();i++){
             mpp[s[i]-'a']++;
         }
