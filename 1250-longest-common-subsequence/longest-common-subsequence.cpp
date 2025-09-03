@@ -1,6 +1,5 @@
 class Solution {
 public:
-
     int longestCommonSubsequence(string text1, string text2) {
         vector<vector<int>> dp(text1.size()+1, vector<int>(text2.size()+1, 0));
         for(int i =1;i<text1.size()+1;i++){
@@ -13,6 +12,7 @@ public:
             }
         }
         return dp[text1.size()][text2.size()];
+        
         
     }
 };
