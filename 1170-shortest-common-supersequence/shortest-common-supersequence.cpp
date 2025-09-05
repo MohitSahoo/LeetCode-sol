@@ -42,6 +42,6 @@ public:
         }
         reverse(s.begin(),s.end());
         return s;
-
+  
     }
 };
