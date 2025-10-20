@@ -1,9 +1,11 @@
 class Solution {
 public:
     vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
-        vector<int>ans;
+        
         int n = grid.size();
         map <int,int>mpp;
+        int repeated=-1;
+        int missing =-1;
         for(int i =1;i<=n*n;i++){
             mpp[i]=0;
         }
@@ -15,15 +17,14 @@ public:
         }
         for(int i =1;i<=n*n;i++){
             if(mpp[i]>1){
-                ans.push_back(i);
+               repeated=i;
             }
-        }
-         for(int i =1;i<=n*n;i++){
             if(mpp[i]==0){
-                ans.push_back(i);
+                missing = i;
             }
         }
+         
         
-        return ans;
+        return {repeated,missing};
     }
 };
