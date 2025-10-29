@@ -1,6 +1,3 @@
-#include <queue>
-using namespace std;
-
 class MedianFinder {
     priority_queue<int> maxh; // Max heap for lower half
     priority_queue<int, vector<int>, greater<int>> minh; // Min heap for upper half
@@ -13,7 +10,7 @@ public:
         } else {
             minh.push(num);
         }
-        // Balance the heaps so their sizes differ by at most 1
+        
         if (maxh.size() > minh.size() + 1) {
             minh.push(maxh.top());
             maxh.pop();
@@ -30,3 +27,11 @@ public:
         return maxh.top();
     }
 };
+
+
+/**
+ * Your MedianFinder object will be instantiated and called as such:
+ * MedianFinder* obj = new MedianFinder();
+ * obj->addNum(num);
+ * double param_2 = obj->findMedian();
+ */
