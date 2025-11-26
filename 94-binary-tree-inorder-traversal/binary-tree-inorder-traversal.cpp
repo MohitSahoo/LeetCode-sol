@@ -10,22 +10,32 @@
  * };
  */
 class Solution {
-
 public:
-    void helper(TreeNode* node,vector<int>&ans){
-        if(node == NULL){
-            return;
-        }
-        helper(node->left,ans);
-        ans.push_back(node->val);
-        helper(node->right,ans);
-    }
     vector<int> inorderTraversal(TreeNode* root) {
-      
-        vector<int> ans;
-        helper(root, ans);
-        return ans;
-    
+        TreeNode * curr = root;
+        vector<int>inorder;
+        while(curr != NULL){
+            if(curr ->left == NULL){
+                inorder.push_back(curr->val);
+                curr = curr->right;
+            }
+            else{
+                TreeNode * prev = curr ->left;
+                while(prev->right != NULL && prev ->right != curr){
+                    prev=prev->right;
+                }
+                if(prev ->right == NULL){
+                    prev->right = curr;
+                    curr = curr->left;
+                }
+                if(prev->right == curr){
+                    prev->right = NULL;
+                    inorder.push_back(curr->val);
+                    curr = curr->right;
+                }
+            }
+        }
+        return inorder;
         
     }
 };
