@@ -1,24 +1,30 @@
 class Solution {
 public:
-    vector<vector<int>>v;
-    vector<int>vec;
-    void solve(int i ,int sum,int target,vector<int>& candidates){
-        int n = candidates.size();
-        if(sum > target) return; 
-        if(i >= n){
-            if(sum == target){
-                v.push_back(vec);
+    void solve(int i, vector<int>& candidates, int target, int sum, vector<int>& op1, vector<vector<int>>& v) {
+        if (i >= candidates.size()) {
+            if (sum == target) {
+                v.push_back(op1);
             }
             return;
         }
-        vec.push_back(candidates[i]);
-        solve(i,sum+candidates[i],target,candidates);
-        vec.pop_back();
-        solve(i+1,sum,target,candidates);
+        if (sum > target) {
+            return;
+        }
+
+        sum+=candidates[i];
+        op1.push_back(candidates[i]);
+        solve(i, candidates, target, sum , op1, v);
+        sum-=candidates[i];
+        op1.pop_back(); // backtrack
+
+        // Skip the current element
+        solve(i + 1, candidates, target, sum, op1, v);
     }
+
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-        solve(0,0,target,candidates);
-       return v;
-        
+        vector<int> op1;
+        vector<vector<int>> v;
+        solve(0, candidates, target, 0, op1, v);
+        return v;
     }
 };
