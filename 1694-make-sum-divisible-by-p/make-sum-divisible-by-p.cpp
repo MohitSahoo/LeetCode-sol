@@ -9,8 +9,8 @@ public:
             return 0;
         }
         int rem = sum %p;
-        unordered_map<int,int> mpp;
-        // mpp[0]=-1;
+       map<int,int> mpp;
+        
         int sum1=0;
         int minlen =INT_MAX;
         for(int i =0;i<nums.size();i++){
