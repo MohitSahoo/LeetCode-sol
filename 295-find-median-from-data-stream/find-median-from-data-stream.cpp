@@ -1,6 +1,6 @@
 class MedianFinder {
-    priority_queue<int> maxh; // Max heap for lower half
-    priority_queue<int, vector<int>, greater<int>> minh; // Min heap for upper half
+    priority_queue<int> maxh; 
+    priority_queue<int, vector<int>, greater<int>> minh;  
 public:
     MedianFinder() {}
 
