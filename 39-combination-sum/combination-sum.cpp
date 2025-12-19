@@ -13,11 +13,9 @@ public:
 
         sum+=candidates[i];
         op1.push_back(candidates[i]);
-        solve(i, candidates, target, sum , op1, v);
+        solve(i,candidates,target,sum,op1,v);
         sum-=candidates[i];
-        op1.pop_back(); // backtrack
-
-        // Skip the current element
+        op1.pop_back();
         solve(i + 1, candidates, target, sum, op1, v);
     }
 
