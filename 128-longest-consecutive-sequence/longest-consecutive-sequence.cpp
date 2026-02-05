@@ -10,10 +10,9 @@ public:
         unordered_set<int>s1(nums.begin(),nums.end());
         int maxcount = -1;
         for(auto it:s1){
-            int count =0;
+            int count =1;
             if(s1.find(it-1)==s1.end()){
                 int x = it;
-                count++;
                 while(s1.find(x+1)!=s1.end()){
                     count++;
                     x++;
